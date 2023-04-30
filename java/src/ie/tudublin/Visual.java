@@ -62,8 +62,8 @@ public abstract class Visual extends PApplet {
 				average += fft.getBand(j) * (j + 1);
 			}
 			average /= (float) w;
-			bands[i] = average * 1.0f;
-			smoothedBands[i] = lerp(smoothedBands[i], bands[i], 0.8f);
+			bands[i] = average * 1.5f;
+			smoothedBands[i] = lerp(smoothedBands[i], bands[i], 0.9f);
 		}
 	}
 
