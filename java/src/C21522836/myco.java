@@ -1,13 +1,13 @@
 package C21522836;
 
 import ie.tudublin.*;
-import processing.core.PApplet;
 
 public class Myco extends Visual {
 
     // rectangle/bar dimensions, constants
-    private static final int RECT_HEIGHT = 10;
-    private static final int RECT_GAP = 4;
+    private static final int RECT_HEIGHT = 12;
+    private static final int RECT_GAP = 8;
+    private static final int BAR_GAP = 14;
 
     //window settings
     public void settings() {
@@ -45,11 +45,11 @@ public class Myco extends Visual {
 
         float[] bands = getSmoothedBands();
         int numBands = bands.length;
-        int gap = 14; // Set the gap width between the bars
-        float bandWidth = (float) (width - (numBands * gap)) / numBands;
+        //int gap = 12; // Set the gap width between the bars
+        float bandWidth = (float) (width - (numBands * BAR_GAP)) / numBands;
 
         for (int i = 0; i < numBands; i++) {
-            float x = i * (bandWidth + gap);
+            float x = i * (bandWidth + BAR_GAP);
             float y = height;
             float bandHeight = bands[i];
 
