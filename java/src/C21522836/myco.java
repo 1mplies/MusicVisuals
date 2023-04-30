@@ -5,9 +5,9 @@ import ie.tudublin.*;
 public class Myco extends Visual {
 
     // rectangle/bar dimensions, constants
-    private static final int RECT_HEIGHT = 12;
-    private static final int RECT_GAP = 8;
-    private static final int BAR_GAP = 14;
+    private static final int RECT_HEIGHT = 20;
+    private static final int RECT_GAP = 10;
+    private static final int BAR_GAP = 25;
 
     //window settings
     public void settings() {
