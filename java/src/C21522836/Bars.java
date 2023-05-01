@@ -6,9 +6,9 @@ import processing.core.PApplet;
 public class Bars implements VisualComponent {
     private MycoVisual parent;
 
-    private static final int RECT_HEIGHT = 20;
-    private static final int RECT_GAP = 10;
-    private static final int BAR_GAP = 60;
+    private static final int RECT_HEIGHT = 30;
+    private static final int RECT_GAP = 5;
+    private static final int BAR_GAP = 20;
 
     public Bars(MycoVisual parent) {
         this.parent = parent;
@@ -26,7 +26,9 @@ public class Bars implements VisualComponent {
         } catch (VisualException e) {
             e.printStackTrace();
         }
-        parent.calculateFrequencyBands();
+        if (parent.isPlaying()) {
+            parent.calculateFrequencyBands();
+        }
 
         float[] bands = parent.getSmoothedBands();
         int numBands = bands.length;
@@ -36,7 +38,7 @@ public class Bars implements VisualComponent {
             float x = i * (bandWidth + BAR_GAP);
             float y = parent.height;
             float bandHeight = bands[i];
-            int bandColor = getColorByIndex(i, numBands);
+            int bandColor = getColor(i, numBands);
 
             for (int j = 0; j < bandHeight / (RECT_HEIGHT + RECT_GAP); j++) {
                 float rectY = y - (j * (RECT_HEIGHT + RECT_GAP));
@@ -48,7 +50,7 @@ public class Bars implements VisualComponent {
         }
     }
 
-    private int getColorByIndex(int index, int total) {
+    private int getColor(int index, int total) {
         float hue = PApplet.map(index, 0, total, 0, 255);
         return parent.color(hue, 220, 180);
     }

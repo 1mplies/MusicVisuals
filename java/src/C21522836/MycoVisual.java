@@ -20,6 +20,10 @@ public abstract class MycoVisual extends PApplet {
     private float amplitude = 0;
 	private float smothedAmplitude = 0;
 
+    public boolean isPlaying() {
+        return getAudioPlayer().isPlaying();
+    }
+
     public void startMinim() {
         minim = new Minim(this);
 
