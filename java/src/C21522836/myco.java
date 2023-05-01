@@ -2,7 +2,7 @@ package C21522836;
 
 import ie.tudublin.*;
 
-public class Myco extends Visual {
+public class Myco extends MycoVisual {
 
     // rectangle/bar dimensions, constants
     private static final int RECT_HEIGHT = 20;
