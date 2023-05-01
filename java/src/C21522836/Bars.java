@@ -6,9 +6,9 @@ import processing.core.PApplet;
 public class Bars implements VisualComponent {
     private MycoVisual parent;
 
-    private static final int RECT_HEIGHT = 30;
-    private static final int RECT_GAP = 5;
-    private static final int BAR_GAP = 20;
+    private static final int RECT_HEIGHT = 15;
+    private static final int RECT_GAP = 10;
+    private static final int BAR_GAP = 30;
 
     public Bars(MycoVisual parent) {
         this.parent = parent;

@@ -9,7 +9,7 @@ public class Myco extends MycoVisual {
     private boolean isPlaying = true;
 
     public void settings() {
-        size(1600, 900);
+        size(1280, 768);
     }
 
     public void setup() {

@@ -30,8 +30,14 @@ public class Mushroom implements VisualComponent {
 
         // Mushroom cap
         float capDiameter = PApplet.lerp(initialCapDiameter, maxCapDiameter, progress);
-        parent.fill(255, 255, 255, 100);
-        parent.arc(mushroomX, mushroomY, capDiameter, capDiameter, PApplet.PI, PApplet.TWO_PI);
+        float capWidth = capDiameter;
+        float capHeight = PApplet.map(progress, 0, 1, capDiameter, capDiameter / 2);
+        parent.fill(40, 100, 100, 100);
+        parent.beginShape();
+        parent.vertex(mushroomX - capWidth / 2, mushroomY);
+        float controlPointOffset = capWidth / 4;
+        parent.bezierVertex(mushroomX - capWidth / 2 + controlPointOffset, mushroomY - capHeight, mushroomX + capWidth / 2 - controlPointOffset, mushroomY - capHeight, mushroomX + capWidth / 2, mushroomY);
+        parent.endShape();
 
         //stem
         float stemWidth = capDiameter / 4;
