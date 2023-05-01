@@ -8,18 +8,17 @@ public class Bars implements VisualComponent {
 
     private static final int RECT_HEIGHT = 15;
     private static final int RECT_GAP = 10;
-    private static final int BAR_GAP = 30;
+    private static final int BAR_GAP = 20;
 
     public Bars(MycoVisual parent) {
         this.parent = parent;
     }
 
     public void setup() {
-
     }
 
     public void draw() {
-        parent.background(0);
+        parent.colorMode(PApplet.HSB);
 
         try {
             parent.calculateFFT();
