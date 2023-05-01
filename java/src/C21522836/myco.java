@@ -7,6 +7,7 @@ public class Myco extends MycoVisual {
     private Mushroom mushroom;
     private ProgressBar progressBar;
     private boolean isPlaying = true;
+    private Aura aura;
 
     public void settings() {
         size(1280, 768);
@@ -14,12 +15,16 @@ public class Myco extends MycoVisual {
 
     public void setup() {
         startMinim();
+        //loadAudio("この星で.mp3");
         loadAudio("NoMoneyDownLowMonthlyPayments.mp3");
         getAudioPlayer().play();
         colorMode(HSB, 255);
 
         bars = new Bars(this);
         bars.setup();
+
+        aura = new Aura(this);
+        aura.setup();
 
         mushroom = new Mushroom(this, 1, 600, 2, 400);
         mushroom.setup();
@@ -29,6 +34,7 @@ public class Myco extends MycoVisual {
 
         progressBar = new ProgressBar(this);
         progressBar.setup();
+        
     }
 
     public void draw() {
@@ -44,7 +50,8 @@ public class Myco extends MycoVisual {
             calculateFrequencyBands();
         }
         calculateAverageAmplitude();
-    
+        
+        aura.draw();
         bars.draw();
         mushroom.draw();
         progressBar.draw();

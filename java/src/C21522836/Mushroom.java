@@ -30,7 +30,7 @@ public class Mushroom implements VisualComponent {
     
         // mushroom cap
         float capDiameter = PApplet.lerp(initialCapDiameter, maxCapDiameter, progress);
-        float capWidth = PApplet.map(progress, 0, 0.8f, initialCapDiameter / 4, capDiameter);
+        float capWidth = PApplet.map(progress, 0, 1, initialCapDiameter / 4, capDiameter);
         float capHeight = PApplet.map(progress, 0, 1, capDiameter, capDiameter / 2);
     
         int startColor = parent.color(51, 26, 0);

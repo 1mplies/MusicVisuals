@@ -3,20 +3,18 @@ package C21522836;
 import ie.tudublin.*;
 import processing.core.PApplet;
 
-public class Bars implements VisualComponent {
+public class Aura implements VisualComponent {
     private MycoVisual parent;
 
-    private static final int RECT_HEIGHT = 15;
-    private static final int RECT_GAP = 10;
     private static final int BAR_GAP = 20;
 
-    public Bars(MycoVisual parent) {
+    public Aura(MycoVisual parent) {
         this.parent = parent;
     }
 
     public void setup() {
-    }
 
+    }
 
     public void draw() {
         parent.colorMode(PApplet.HSB);
@@ -40,19 +38,23 @@ public class Bars implements VisualComponent {
             float bandHeight = bands[i];
             int bandColor = getColor(i, numBands);
 
-            for (int j = 0; j < bandHeight / (RECT_HEIGHT + RECT_GAP); j++) {
-                float rectY = y - (j * (RECT_HEIGHT + RECT_GAP));
-                float opacity = PApplet.map(j, 0, bandHeight / (RECT_HEIGHT + RECT_GAP), 255, 0);
+            parent.noStroke();
+
+            int numEllipses = 5;
+            for (int j = 0; j < numEllipses; j++) {
+                float sizeMultiplier = (j + 1);
+                float ellipseWidth = bandWidth * sizeMultiplier;
+                float ellipseHeight = bandHeight * sizeMultiplier;
+                float opacity = PApplet.map(j, 0, numEllipses, 64, 0);
                 int colorWithOpacity = (bandColor & 0x00FFFFFF) | ((int) opacity << 24);
                 parent.fill(colorWithOpacity);
-                parent.rect(x, rectY, bandWidth, RECT_HEIGHT);
+                parent.ellipse(x + bandWidth / 2, y, ellipseWidth, ellipseHeight);
             }
         }
     }
-    
 
     private int getColor(int index, int total) {
         float hue = PApplet.map(index, 0, total, 0, 255);
-        return parent.color(hue, 220, 180);
+        return parent.color(hue, 255, 20);
     }
 }
