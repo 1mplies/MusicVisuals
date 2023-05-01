@@ -101,9 +101,6 @@ public abstract class Visual extends PApplet {
 		return smoothedBands;
 	}
 
-	public float[] getSmoothedBandsLinear() {
-		return smoothedBands;
-	}
 
 	public Minim getMinim() {
 		return minim;

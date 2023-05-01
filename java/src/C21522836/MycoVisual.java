@@ -17,6 +17,9 @@ public abstract class MycoVisual extends PApplet {
     private AudioBuffer ab;
     private FFT fft;
 
+    private float amplitude = 0;
+	private float smothedAmplitude = 0;
+
     public void startMinim() {
         minim = new Minim(this);
 
@@ -39,6 +42,16 @@ public abstract class MycoVisual extends PApplet {
         }
     }
 
+    public void calculateAverageAmplitude() {
+		float total = 0;
+		for (int i = 0; i < ab.size(); i++) {
+			total += abs(ab.get(i));
+		}
+		amplitude = total / ab.size();
+		smothedAmplitude = PApplet.lerp(smothedAmplitude, amplitude, 0.7f);
+	}
+
+
     protected void calculateFrequencyBands() {
         for (int i = 0; i < bands.length; i++) {
             int start = (int) pow(2, i) - 1;
@@ -49,7 +62,7 @@ public abstract class MycoVisual extends PApplet {
                 average += fft.getBand(j) * (j + 1);
             }
             average /= (float) w;
-            bands[i] = average * 1.5f;
+            bands[i] = average * 1.0f;
             smoothedBands[i] = lerp(smoothedBands[i], bands[i], 0.9f);
         }
     }
@@ -58,6 +71,14 @@ public abstract class MycoVisual extends PApplet {
         ap = minim.loadFile(filename, frameSize);
         ab = ap.mix;
     }
+
+    public float getAmplitude() {
+		return amplitude;
+	}
+
+	public float getSmoothedAmplitude() {
+		return smothedAmplitude;
+	}
 
     public float[] getBands() {
         return bands;

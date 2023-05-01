@@ -1,8 +1,10 @@
 package C21522836;
 
+import ie.tudublin.*;
 
 public class Myco extends MycoVisual {
-    private Bars barVisualizer;
+    private Bars bars;
+    private Circle circle;
 
     public void settings() {
         size(1600, 900);
@@ -14,12 +16,26 @@ public class Myco extends MycoVisual {
         getAudioPlayer().play();
         colorMode(HSB, 255);
 
-        barVisualizer = new Bars(this);
-        barVisualizer.setup();
+        bars = new Bars(this);
+        bars.setup();
+
+        circle = new Circle(this, 300, 200);
+        circle.setup();
     }
 
     public void draw() {
-        barVisualizer.draw();
+        background(0);
+    
+        try {
+            calculateFFT();
+        } catch (VisualException e) {
+            e.printStackTrace();
+        }
+        calculateFrequencyBands();
+        calculateAverageAmplitude();
+    
+        bars.draw();
+        circle.draw();
     }
 
     public void mousePressed() {
