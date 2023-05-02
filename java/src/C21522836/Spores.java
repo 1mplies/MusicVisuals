@@ -11,7 +11,7 @@ public class Spores implements VisualComponent {
     private Mushroom mushroom;
     private ArrayList<Spore> spores;
     //threshold to be exceeded for spores to drop ~0.1 seems to be enough for spores to only drop after the first drop in song
-    private final float emissionThreshold = 0.08f;
+    private final float emissionThreshold = 0.13f;
 
     //constructor for spores class
     public Spores(MycoVisual parent, Mushroom mushroom) {
@@ -38,7 +38,7 @@ public class Spores implements VisualComponent {
             }
         }
 
-        //interating through spores array, updating position and velocity
+        //iterating through spores array, updating position and velocity
         Iterator<Spore> iterator = spores.iterator();
         while (iterator.hasNext()) {
             Spore spore = iterator.next();

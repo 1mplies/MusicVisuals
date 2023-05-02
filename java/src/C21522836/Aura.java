@@ -28,7 +28,7 @@ public class Aura implements VisualComponent {
             parent.calculateFrequencyBands();
         }
 
-        float[] bands = parent.getSmoothedBands();
+        final float[] bands = parent.getSmoothedBands();
         int numBands = bands.length;
         float bandWidth = (float) (parent.width - (numBands * BAR_GAP)) / numBands;
 

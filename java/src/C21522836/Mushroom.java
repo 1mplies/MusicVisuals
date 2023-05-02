@@ -29,10 +29,10 @@ public class Mushroom implements VisualComponent {
         float stemHeight = PApplet.lerp(initialStemHeight, maxStemHeight, progress);
         float mushroomY = parent.height;
 
-        // mushroom cap
+        //mushroom cap
         final float capDiameter = PApplet.lerp(initialCapDiameter, maxCapDiameter, progress);
         float capWidth = PApplet.map(progress, 0, 1, initialCapDiameter / 4, capDiameter);
-        float capHeight = PApplet.map(progress, 0, 1, capDiameter, capDiameter / 2);
+        final float capHeight = PApplet.map(progress, 0, 1, capDiameter, capDiameter / 2);
 
         int startColor = parent.color(51, 26, 0);
         int endColor = parent.color(178, 119, 0);
@@ -66,10 +66,12 @@ public class Mushroom implements VisualComponent {
         return PApplet.lerp(initialCapDiameter, maxCapDiameter, progress);
     }
 
+    /**
+     * @return
+     */
     public float getCapY() {
         float progress = (float) parent.getAudioPlayer().position() / parent.getAudioPlayer().length();
         float stemHeight = PApplet.lerp(initialStemHeight, maxStemHeight, progress);
-        float capHeight = PApplet.map(progress, 0, 1, initialCapDiameter, maxCapDiameter) / 2;
         return parent.height - stemHeight;
     }
 

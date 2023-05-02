@@ -11,7 +11,7 @@ public class Myco extends MycoVisual {
     private Spores sporeEmitter;
 
     public void settings() {
-        size(1280, 768);
+        fullScreen();
     }
 
     public void setup() {
