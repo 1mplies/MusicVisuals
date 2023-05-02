@@ -12,6 +12,7 @@ public class Myco extends MycoVisual {
 
     public void settings() {
         fullScreen();
+        //size(1600, 900);
     }
 
     public void setup() {

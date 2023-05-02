@@ -44,7 +44,6 @@ public class Spores implements VisualComponent {
             Spore spore = iterator.next();
             spore.update();
             spore.display();
-            // ### WHY NO WORK
             if (spore.isOutOfScreen()) {
                iterator.remove();
             }
@@ -62,7 +61,7 @@ public class Spores implements VisualComponent {
         float speed = parent.random(0.5f, 4);
         //creating vector
         PVector velocity = new PVector(speed * PApplet.cos(angle), 0);
-        int size = 3;
+        int size = 4;
         int sporeColor = parent.color(135, 200, 255);
         return new Spore(parent, x, y, velocity, size, sporeColor);
     }
