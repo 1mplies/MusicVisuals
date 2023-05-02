@@ -18,7 +18,7 @@ public abstract class MycoVisual extends PApplet {
     private FFT fft;
 
     private float amplitude = 0;
-	private float smothedAmplitude = 0;
+    private float smothedAmplitude = 0;
 
     public boolean isPlaying() {
         return getAudioPlayer().isPlaying();
@@ -47,14 +47,13 @@ public abstract class MycoVisual extends PApplet {
     }
 
     public void calculateAverageAmplitude() {
-		float total = 0;
-		for (int i = 0; i < ab.size(); i++) {
-			total += abs(ab.get(i));
-		}
-		amplitude = total / ab.size();
-		smothedAmplitude = PApplet.lerp(smothedAmplitude, amplitude, 0.7f);
-	}
-
+        float total = 0;
+        for (int i = 0; i < ab.size(); i++) {
+            total += abs(ab.get(i));
+        }
+        amplitude = total / ab.size();
+        smothedAmplitude = PApplet.lerp(smothedAmplitude, amplitude, 0.7f);
+    }
 
     protected void calculateFrequencyBands() {
         for (int i = 0; i < bands.length; i++) {
@@ -77,12 +76,12 @@ public abstract class MycoVisual extends PApplet {
     }
 
     public float getAmplitude() {
-		return amplitude;
-	}
+        return amplitude;
+    }
 
-	public float getSmoothedAmplitude() {
-		return smothedAmplitude;
-	}
+    public float getSmoothedAmplitude() {
+        return smothedAmplitude;
+    }
 
     public float[] getBands() {
         return bands;

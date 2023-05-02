@@ -17,7 +17,6 @@ public class Bars implements VisualComponent {
     public void setup() {
     }
 
-
     public void draw() {
         parent.colorMode(PApplet.HSB);
 
@@ -49,7 +48,6 @@ public class Bars implements VisualComponent {
             }
         }
     }
-    
 
     private int getColor(int index, int total) {
         float hue = PApplet.map(index, 0, total, 0, 255);
