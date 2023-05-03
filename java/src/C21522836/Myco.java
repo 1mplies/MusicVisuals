@@ -29,7 +29,7 @@ public class Myco extends MycoVisual {
         aura = new Aura(this);
         aura.setup();
 
-        bigMushroom = new Mushroom(this, 1, 600, 2, 400, width / 2, height, 0.0f);
+        bigMushroom = new Mushroom(this, 1, 800, 2, 500, width / 2, height, 0.0f);
         bigMushroom.setup();
 
         smallMushrooms = new Mushroom[4];

@@ -11,7 +11,7 @@ public class Spores implements VisualComponent {
     private Mushroom mushroom;
     private ArrayList<Spore> spores;
     //threshold to be exceeded for spores to drop ~0.1 seems to be enough for spores to drop after the first drop in song
-    private final float emissionThreshold = 0.14f;
+    private final float emissionThreshold = 0.16f;
 
     //constructor for spores class
     public Spores(MycoVisual parent, Mushroom mushroom) {
