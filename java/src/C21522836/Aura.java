@@ -28,25 +28,29 @@ public class Aura implements VisualComponent {
             parent.calculateFrequencyBands();
         }
 
-        final float[] bands = parent.getSmoothedBands();
+        float[] bands = parent.getSmoothedBands();
         int numBands = bands.length;
         float bandWidth = (float) (parent.width - (numBands * BAR_GAP)) / numBands;
 
+        //iterate each frequency band
         for (int i = 0; i < numBands; i++) {
-            float x = i * (bandWidth + BAR_GAP);
-            float y = parent.height;
+            float x = i * (bandWidth + BAR_GAP); //x of bar
+            float y = parent.height; //y to bottom
             float bandHeight = bands[i];
             int bandColor = getColor(i, numBands);
 
             parent.noStroke();
 
-            int numEllipses = 4;
+            int numEllipses = 6;
+            //iterate each ellipse
             for (int j = 0; j < numEllipses; j++) {
-                float sizeMultiplier = (j + 1);
+                float sizeMultiplier = (j + 1f); //current ellipse multiplier
                 float ellipseWidth = bandWidth * sizeMultiplier;
                 float ellipseHeight = bandHeight * sizeMultiplier;
+                //map opacity based on index
                 float opacity = PApplet.map(j, 0, numEllipses, 64, 0);
-                int colorWithOpacity = (bandColor & 0x00FFFFFF) | ((int) opacity << 24);
+                //removing alpha bits from bandColor with bitwise AND with 0x00FFFFFF to keep only rgb
+                int colorWithOpacity = (bandColor & 0x00FFFFFF) | ((int) opacity << 24); // << 24 into alpha channel
                 parent.fill(colorWithOpacity);
                 parent.ellipse(x + bandWidth / 2, y, ellipseWidth, ellipseHeight);
             }
@@ -55,6 +59,6 @@ public class Aura implements VisualComponent {
 
     private int getColor(int index, int total) {
         float hue = PApplet.map(index, 0, total, 0, 255);
-        return parent.color(hue, 255, 20);
+        return parent.color(hue, 255, 25);
     }
 }

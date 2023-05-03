@@ -29,19 +29,24 @@ public class Bars implements VisualComponent {
             parent.calculateFrequencyBands();
         }
 
+        //calculate numBands and width
         float[] bands = parent.getSmoothedBands();
         int numBands = bands.length;
         float bandWidth = (float) (parent.width - (numBands * BAR_GAP)) / numBands;
 
+        //iterate through bands
         for (int i = 0; i < numBands; i++) {
+            //get xy, height and color
             float x = i * (bandWidth + BAR_GAP);
             float y = parent.height;
             float bandHeight = bands[i];
             int bandColor = getColor(i, numBands);
-
+            
+            //iterate through rectangles
             for (int j = 0; j < bandHeight / (RECT_HEIGHT + RECT_GAP); j++) {
                 float rectY = y - (j * (RECT_HEIGHT + RECT_GAP));
                 float opacity = PApplet.map(j, 0, bandHeight / (RECT_HEIGHT + RECT_GAP), 255, 0);
+                 //removing alpha bits from bandColor with bitwise AND with 0x00FFFFFF to keep only rgb, bitshifting opacity to alpha channel
                 int colorWithOpacity = (bandColor & 0x00FFFFFF) | ((int) opacity << 24);
                 parent.fill(colorWithOpacity);
                 parent.rect(x, rectY, bandWidth, RECT_HEIGHT);
