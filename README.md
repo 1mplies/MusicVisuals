@@ -19,19 +19,30 @@ maybe this is the music of the mushrooms themselves! no im not insane, mushrooms
 
 [![YouTube](https://i3.ytimg.com/vi/sRPUsP6Trbk/maxresdefault.jpg)](https://youtu.be/sRPUsP6Trbk)
 
-## Screenshots
-
 # Instructions
 
+when the visualizer is running the spacebar can be used to pause/play the song & visuals, and the mouse can be used to progress or rewind the song by clicking on
+the x-axis, a visual progress bar is visible at the bottom
+
+much of the scaling is relative and the display size can be set in the 'Myco' class
+
+
 # How it works
+
+
 
 # List of classes/assets
 
 | Class/asset | Source |
 |-----------|-----------|
-| MyClass.cs | Self written |
-| MyClass1.cs | Modified from [reference]() |
-| MyClass2.cs | From [reference]() |
+| Aura.java | Self written |
+| Bars.java | Self written |
+| Mushroom.java | Self written |
+| Myco.java | Self written |
+| MycoVisual.java | Modified From skooter500's Visual.java |
+| ProgressBar.java| Self written |
+| Spores.java | Self written |
+| VisualComponent.java | Self written |
 
 Each team member or individual needs to write a paragraph or two explaining what they contributed to the project
 
@@ -91,25 +102,3 @@ public void render()
 	ui.text(text, x + width * 0.5f, y + height * 0.5f);
 }
 ```
-
-This is an image using a relative URL:
-
-![An image](images/p8.png)
-
-This is an image using an absolute URL:
-
-![A different image](https://bryanduggandotorg.files.wordpress.com/2019/02/infinite-forms-00045.png?w=595&h=&zoom=2)
-
-This is a youtube video:
-
-[![YouTube](http://img.youtube.com/vi/J2kHSSFA4NU/0.jpg)](https://www.youtube.com/watch?v=J2kHSSFA4NU)
-
-This is a table:
-
-| Heading 1 | Heading 2 |
-|-----------|-----------|
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-
