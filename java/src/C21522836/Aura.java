@@ -41,7 +41,7 @@ public class Aura implements VisualComponent {
 
             parent.noStroke();
 
-            int numEllipses = 6;
+            int numEllipses = 4;
             //iterate each ellipse
             for (int j = 0; j < numEllipses; j++) {
                 float sizeMultiplier = (j + 1f); //current ellipse multiplier
@@ -59,6 +59,6 @@ public class Aura implements VisualComponent {
 
     private int getColor(int index, int total) {
         float hue = PApplet.map(index, 0, total, 0, 255);
-        return parent.color(hue, 255, 25);
+        return parent.color(hue, 255, 55);
     }
-}
+}7
