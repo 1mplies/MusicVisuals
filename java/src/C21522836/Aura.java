@@ -49,8 +49,7 @@ public class Aura implements VisualComponent {
                 float ellipseHeight = bandHeight * sizeMultiplier;
                 //map opacity based on index
                 float opacity = PApplet.map(j, 0, numEllipses, 64, 0);
-                //removing alpha bits from bandColor with bitwise AND with 0x00FFFFFF to keep only rgb
-                int colorWithOpacity = (bandColor & 0x00FFFFFF) | ((int) opacity << 24); // << 24 into alpha channel
+                int colorWithOpacity = parent.color(parent.hue(bandColor), parent.saturation(bandColor), parent.brightness(bandColor), opacity);
                 parent.fill(colorWithOpacity);
                 parent.ellipse(x + bandWidth / 2, y, ellipseWidth, ellipseHeight);
             }
@@ -61,4 +60,4 @@ public class Aura implements VisualComponent {
         float hue = PApplet.map(index, 0, total, 0, 255);
         return parent.color(hue, 255, 55);
     }
-}7
+}

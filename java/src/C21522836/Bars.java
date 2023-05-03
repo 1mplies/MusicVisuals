@@ -46,8 +46,7 @@ public class Bars implements VisualComponent {
             for (int j = 0; j < bandHeight / (RECT_HEIGHT + RECT_GAP); j++) {
                 float rectY = y - (j * (RECT_HEIGHT + RECT_GAP));
                 float opacity = PApplet.map(j, 0, bandHeight / (RECT_HEIGHT + RECT_GAP), 255, 0);
-                 //removing alpha bits from bandColor with bitwise AND with 0x00FFFFFF to keep only rgb, bitshifting opacity to alpha channel
-                int colorWithOpacity = (bandColor & 0x00FFFFFF) | ((int) opacity << 24);
+                int colorWithOpacity = parent.color(parent.hue(bandColor), parent.saturation(bandColor), parent.brightness(bandColor), opacity);
                 parent.fill(colorWithOpacity);
                 parent.rect(x, rectY, bandWidth, RECT_HEIGHT);
             }
