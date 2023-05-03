@@ -16,7 +16,7 @@ public class ProgressBar implements VisualComponent {
         progress = (float) parent.getAudioPlayer().position() / parent.getAudioPlayer().length();
 
         parent.noStroke();
-        parent.fill(255);
+        parent.fill(90);
         parent.rect(0, parent.height - 4, parent.width * progress, 5);
     }
 }

@@ -40,7 +40,7 @@ public class Aura implements VisualComponent {
 
             parent.noStroke();
 
-            int numEllipses = 3;
+            int numEllipses = 4;
             for (int j = 0; j < numEllipses; j++) {
                 float sizeMultiplier = (j + 1);
                 float ellipseWidth = bandWidth * sizeMultiplier;

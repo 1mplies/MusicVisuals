@@ -4,7 +4,8 @@ import ie.tudublin.*;
 
 public class Myco extends MycoVisual {
     private Bars bars;
-    private Mushroom mushroom;
+    private Mushroom bigMushroom;
+    private Mushroom[] smallMushrooms;
     private ProgressBar progressBar;
     private boolean isPlaying = true;
     private Aura aura;
@@ -17,7 +18,7 @@ public class Myco extends MycoVisual {
 
     public void setup() {
         startMinim();
-        // loadAudio("この星で.mp3");
+        //loadAudio("この星で.mp3");
         loadAudio("NoMoneyDownLowMonthlyPayments.mp3");
         getAudioPlayer().play();
         colorMode(HSB, 255);
@@ -28,8 +29,16 @@ public class Myco extends MycoVisual {
         aura = new Aura(this);
         aura.setup();
 
-        mushroom = new Mushroom(this, 1, 600, 2, 400);
-        mushroom.setup();
+        bigMushroom = new Mushroom(this, 1, 600, 2, 400, width / 2, height, 0.0f);
+        bigMushroom.setup();
+
+        smallMushrooms = new Mushroom[4];
+        for (int i = 0; i < 4; i++) {
+            float xPosition = width * (i + 1) / 5.0f;
+            float startY = height;
+            smallMushrooms[i] = smallMushrooms[i] = new Mushroom(this, 0.5f, 300, 1, 200, xPosition, startY, 0.5f);
+            smallMushrooms[i].setup();
+        }
 
         getAudioPlayer().play();
         isPlaying = true;
@@ -37,7 +46,7 @@ public class Myco extends MycoVisual {
         progressBar = new ProgressBar(this);
         progressBar.setup();
 
-        sporeEmitter = new Spores(this, mushroom);
+        sporeEmitter = new Spores(this, bigMushroom);
         sporeEmitter.setup();
     }
 
@@ -57,7 +66,13 @@ public class Myco extends MycoVisual {
 
         aura.draw();
         bars.draw();
-        mushroom.draw();
+        bigMushroom.draw();
+        float progress = (float) getAudioPlayer().position() / getAudioPlayer().length();
+        if (progress > 0.5f) {
+            for (Mushroom smallMushroom : smallMushrooms) {
+                smallMushroom.draw();
+            }
+        }
         progressBar.draw();
         sporeEmitter.draw();
     }

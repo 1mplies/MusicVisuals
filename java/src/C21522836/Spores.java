@@ -10,8 +10,8 @@ public class Spores implements VisualComponent {
     private MycoVisual parent;
     private Mushroom mushroom;
     private ArrayList<Spore> spores;
-    //threshold to be exceeded for spores to drop ~0.1 seems to be enough for spores to only drop after the first drop in song
-    private final float emissionThreshold = 0.13f;
+    //threshold to be exceeded for spores to drop ~0.1 seems to be enough for spores to drop after the first drop in song
+    private final float emissionThreshold = 0.14f;
 
     //constructor for spores class
     public Spores(MycoVisual parent, Mushroom mushroom) {
@@ -44,6 +44,7 @@ public class Spores implements VisualComponent {
             Spore spore = iterator.next();
             spore.update();
             spore.display();
+            //removing when out of screen
             if (spore.isOutOfScreen()) {
                iterator.remove();
             }
@@ -66,7 +67,7 @@ public class Spores implements VisualComponent {
         return new Spore(parent, x, y, velocity, size, sporeColor);
     }
 
-    // spore object
+    // spore class
     private class Spore {
         PApplet p;
         PVector position;
@@ -84,10 +85,10 @@ public class Spores implements VisualComponent {
 
         }
 
-        //PVector & gravity
+        //gravity
         void update() {
             position.add(velocity);
-            velocity.y += 0.05;
+            velocity.y += 0.04;
         }
 
         void display() {
