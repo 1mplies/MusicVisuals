@@ -25,7 +25,9 @@ when the visualizer is running the spacebar can be used to pause/play the song &
 the x-axis, a visual progress bar is visible at the bottom
 
 much of the scaling is relative and the display size can be set in the 'Myco' class
-
+modify 'int numEllipses = 7;' 
+and 'return parent.color(hue, 255, 10);' in 'getColor' method, third parameter for brightness
+in Aura.java to adjust for a more performant or a smoother lighting effect
 
 # How it works
 
@@ -44,61 +46,49 @@ much of the scaling is relative and the display size can be set in the 'Myco' cl
 | Spores.java | Self written |
 | VisualComponent.java | Self written |
 
-Each team member or individual needs to write a paragraph or two explaining what they contributed to the project
+ all contributions made by me and inspired by nature
 
-- What they did
-- What they are most proud of
-- What they learned
+- What I am most proud of
+
+as far as coding is concerned i feared that the most difficult and daunting part would be creating the spore class
+which constructs and draws spores appearing to sprinkle out randomly from beneath the mushroom cap. this is my proudest coding 
+implementation in the assignment.
+though this seemed like the most complex component to implement, i managed to get it working and looking as i imagined quicker than i expected.
+this was due to both the experience i gained playing around with the previous labs that introduced similar techniques, 
+and the brief yet concise and guided prep work i did to think in advance of what i need to do, how i will do it, and how 
+i will implement it, rather than diving head first into an idea i hadn't deconstructed in my mind yet! it also took a lot of coffee and 
+some hours of valuable potential dreaming time lost.
+
+coding aside, i am most proud of the general synergy of the song and the visuals. my intention from the start was to tell some kind of a story
+and something about this song creates a feeling or tone that i can't quite describe in words, however the eerieness, beauty, mystery, weirdness and maybe
+even a feeling of immenent death and decay, i have already experienced when learning about, seeing, or thinking about the mysterious world of fungus. 
+i thus decided to relate the two and tell the simple story of a mushroom growing and spreading its spores
+though the visuals are minimal and cartoonish, frankly noobish and ugly, im happy i told the story and created a foundation that i could improve on in the future
+
+man i love mushrooms.
+
+- What I learned
+
+where to begin?!
+this is thus far my most complex scratch java project so far that implements the most components. despite that, i have learned important skills in creating 
+a modular and adaptable program. i went from not understanding interfaces (or even caring!) to knowing why it exists, why we sometimes need it, and how it's beneficial
+to modularizing a program that makes use of good object oriented programming practices.
+i gained useful experience in working with shapes and visuals, learned how to use bezier curves, and went out of my way to learn more about them and why they're so cool!
+much more little things inside of every component that add to my java and general programming experience.
+
+
 
 # References
-* Item 1
-* Item 2
+* https://github.com/skooter500/MusicVisuals
 
-# From here on, are examples of how to different things in Markdown. You can delete.  
-
-## This is how to markdown text:
-
-This is *emphasis*
-
-This is a bulleted list
-
-- Item
-- Item
-
-This is a numbered list
-
-1. Item
-1. Item
-
-This is a [hyperlink](http://bryanduggan.org)
-
-# Headings
-## Headings
-#### Headings
-##### Headings
-
-This is code:
 
 ```Java
 public void render()
 {
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
-```
-
-So is this without specifying the language:
-
-```
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
+    ui.noFill();
+    ui.stroke(255);
+    ui.rect(x, y, width, height);
+    ui.textAlign(PApplet.CENTER, PApplet.CENTER);
+    ui.text(text, x + width * 0.5f, y + height * 0.5f);
 }
 ```
