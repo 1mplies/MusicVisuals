@@ -58,6 +58,6 @@ public class Aura implements VisualComponent {
 
     private int getColor(int index, int total) {
         float hue = PApplet.map(index, 0, total, 0, 255);
-        return parent.color(hue, 255, 13);
+        return parent.color(hue, 255, 17);
     }
 }

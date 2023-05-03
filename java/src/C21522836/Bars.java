@@ -29,7 +29,7 @@ public class Bars implements VisualComponent {
             parent.calculateFrequencyBands();
         }
 
-        //calculate numBands and width
+        //calculate numBands and width 
         float[] bands = parent.getSmoothedBands();
         int numBands = bands.length;
         float bandWidth = (float) (parent.width - (numBands * BAR_GAP)) / numBands;

@@ -1,25 +1,44 @@
-# Music Visualiser Project
+# Myco Music Visualizer
 
-Name:
+Name: Lukas Vaiciulaitis
 
-Student Number: 
+Student Number: C21522836
 
-## Instructions
-- Fork this repository and use it a starter project for your assignment
-- Create a new package named your student number and put all your code in this package.
-- You should start by creating a subclass of ie.tudublin.Visual
-- There is an example visualiser called MyVisual in the example package
-- Check out the WaveForm and AudioBandsVisual for examples of how to call the Processing functions from other classes that are not subclasses of PApplet
+Class Group: TU858/2
 
-# Description of the assignment
+# Description
+
+## Video:
+
+[![YouTube](https://i3.ytimg.com/vi/sRPUsP6Trbk/maxresdefault.jpg)](https://youtu.be/sRPUsP6Trbk)
+
+## Screenshots
 
 # Instructions
 
 # How it works
 
-# What I am most proud of in the assignment
+# List of classes/assets
 
-# Markdown Tutorial
+| Class/asset | Source |
+|-----------|-----------|
+| MyClass.cs | Self written |
+| MyClass1.cs | Modified from [reference]() |
+| MyClass2.cs | From [reference]() |
+
+Each team member or individual needs to write a paragraph or two explaining what they contributed to the project
+
+- What they did
+- What they are most proud of
+- What they learned
+
+# References
+* Item 1
+* Item 2
+
+# From here on, are examples of how to different things in Markdown. You can delete.  
+
+## This is how to markdown text:
 
 This is *emphasis*
 
