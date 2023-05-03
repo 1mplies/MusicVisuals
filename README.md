@@ -8,6 +8,13 @@ Class Group: TU858/2
 
 # Description
 
+fairly simple visualizer inspired by old graphic equalizers with additional effects
+and a somewhat... mushroomy influence from a mushroomy? song choice.
+
+a journey of a mushroom growing and sporulating, setting the scene for a mushroom take-over of the screen.
+maybe this is the music of the mushrooms themselves! no im not insane, mushrooms sing songs!
+
+
 ## Video:
 
 [![YouTube](https://i3.ytimg.com/vi/sRPUsP6Trbk/maxresdefault.jpg)](https://youtu.be/sRPUsP6Trbk)
