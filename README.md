@@ -67,7 +67,9 @@ the stem and cap are custom shapes defined by vertices and a bezierVertex functi
 this class creates and manages our spore objects.
 we create an arraylist that stores all of our spores and a draw method to update them on the screen.
 the createSpore() method spawns a spore with a random angle and velocity, emitting from the bottom of the mushroom cap, using a method to get the current y value of the mushroom cap's bottom.
-the spores accelerate towards the bottom of the screen and are removed from the arraylist when an isOutOfScreen boolean is met
+the spores accelerate towards the bottom of the screen and are removed from the arraylist when an isOutOfScreen boolean is met.
+spores can only spawn when the song has reached an average amplitude threshold, once that threshold is exceeded in a condition we calculate a spawn probability by mapping the amplitude between 0 and 1. we roll a random value between 0 and 1 and if the random value is less than the spawn probablity, we 
+create a new spore.
 
 
 
