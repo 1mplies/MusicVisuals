@@ -60,7 +60,7 @@ in the aura class we create a lighting effect that radiates elliptically from th
 here we draw a mushroom that grows over time in accordance to how much of the song has passed. the mushroom constructor takes various dimensions and the starting position and time to
 grow, then our draw() method updates our mushroom repeatedly as the size is interpolated from an initial and a max value depending on where we are in the song.
 the color is subtly lerped too!
-the stemp and cap are custom shapes defined by vertices and a bezierVertex function to achieve a slightly more conical shape.
+the stem and cap are custom shapes defined by vertices and a bezierVertex function to achieve a slightly more conical shape.
 
 - Spores
 
